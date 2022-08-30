@@ -7,7 +7,7 @@ class Categoria(models.Model):
         return self.descricao
 
 class Editora(models.Model):
-    nome = models.CharField(max_length=100)
+    nome = models.CharField(max_length=99)
     site = models.URLField()
     def __str__(self):
         return self.nome
