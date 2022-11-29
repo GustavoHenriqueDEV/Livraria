@@ -6,7 +6,7 @@ from core.models import Editora
 from core.serializers import CategoriaSerializer
 from core.serializers import AutorSerializer
 from core.serializers import EditorasSerializer
-
+from rest_framework.permissions import IsAuthenticated
 
 class AutorViwSet(ModelViewSet):
     queryset = Autor.objects.all()
@@ -19,3 +19,4 @@ class EditorasViewSet(ModelViewSet):
 class CategoriaViewSet(ModelViewSet):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
+    permission_classes = [IsAuthenticated]
