@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'core',
     'rest_framework',
-    "rest_framework_simplejwt",
 ]
 
 MIDDLEWARE = [
@@ -84,9 +83,7 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.IsAuthenticated",
     ],
-     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
-    ),
+
 }
 
 # Database
