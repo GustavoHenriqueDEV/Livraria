@@ -29,6 +29,7 @@ router.register(r'autores', AutorViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("api/", include(router.urls)),
     path('', include(router.urls)),
     path("api/media/", include(uploader_router.urls)),
         path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
