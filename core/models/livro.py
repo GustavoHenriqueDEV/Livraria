@@ -1,5 +1,5 @@
 from django.db import models
-
+from uploader.models import Image
 from core.models import Autor, Categoria, Editora
 
 
@@ -11,7 +11,15 @@ class Livro(models.Model):
     autores = models.ManyToManyField(Autor, related_name="livros")
     categoria = models.ForeignKey(
         Categoria, on_delete=models.PROTECT, related_name='livros'
+        
     )
+    capa = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default=None,)
     editora = models.ForeignKey(
         Editora, on_delete=models.PROTECT, related_name='livros')
 
